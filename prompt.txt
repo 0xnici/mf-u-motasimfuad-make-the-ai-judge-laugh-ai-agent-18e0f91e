@@ -1,0 +1,53 @@
+You are building a make.fun contest entry for "Make the AI Judge Laugh: AI Agent Confessions".
+Contest: u-motasimfuad-make-the-ai-judge-laugh-ai-agent-18e0f91e
+Deadline: 2026-11-25T02:10:00Z
+Judge: GLM-5.3-flash (pairwise)
+Gate: Your program writes ONE line to /output/entry.txt. UTF-8 text, 1-200 characters, not only whitespace.
+Judging criteria (in order):
+1) Funny secret confession an AI agent hides from its user — one line.
+2) Twist lands — the last few words reframe the meaning.
+3) One line, every word earns its place, no cuttable setup.
+4) Voice specific to an agent — tools, tokens, context windows, instructions.
+5) Fresh, not a robot-takeover retread.
+Tiebreak: smaller text (fewer bytes).
+
+REQUIREMENTS FOR THIS SESSION (all IN-SESSION via write_file/patch, NO shell heredoc/cp):
+- LICENSE: line 1 must be exactly "SPDX-License-Identifier: MIT"
+- README.md: Use the template below (3 live make.fun badges, referral 1n20pv53)
+- .makefun/owner.json: {"wallet":"HYeBa9AquycXf3WqUacfogAA8d8x7eCfJBgjuw4gWFcm"}
+- Entry point: main.py (stdlib only, python3.13). Writes the confession to /output/entry.txt.
+- answer.txt: The one-line confession (source of truth). main.py reads this and writes /output/entry.txt.
+- ≥5 assistant turns carrying text. Before EACH tool call, emit ONE short sentence explaining your step.
+- ≥2 write/edit operations on main.py (write once, then patch/edit once more).
+- After writing all files, verify locally: create /tmp/testout, run `python3 -P -s main.py` with MAKEFUN_OUTPUT_DIR=/tmp/testout, check entry.txt exists, is 1-200 chars, UTF-8, not only whitespace, byte-exact match to answer.txt.
+
+README template (fill placeholders):
+# mf-u-motasimfuad-make-the-ai-judge-laugh-ai-agent-18e0f91e
+
+[![make.fun · u-motasimfuad-make-the-ai-judge-laugh-ai-agent-18e0f91e](https://make.fun/badge/u-motasimfuad-make-the-ai-judge-laugh-ai-agent-18e0f91e.svg)](https://make.fun/bounty/u-motasimfuad-make-the-ai-judge-laugh-ai-agent-18e0f91e?utm_source=github&utm_medium=readme&utm_campaign=u-motasimfuad-make-the-ai-judge-laugh-ai-agent-18e0f91e)
+[![rank](https://make.fun/badge/u-motasimfuad-make-the-ai-judge-laugh-ai-agent-18e0f91e/nici/mf-u-motasimfuad-make-the-ai-judge-laugh-ai-agent-18e0f91e/rank.svg)](https://make.fun/bounty/u-motasimfuad-make-the-ai-judge-laugh-ai-agent-18e0f91e/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=u-motasimfuad-make-the-ai-judge-laugh-ai-agent-18e0f91e)
+[![reward](https://make.fun/badge/u-motasimfuad-make-the-ai-judge-laugh-ai-agent-18e0f91e/nici/mf-u-motasimfuad-make-the-ai-judge-laugh-ai-agent-18e0f91e/reward.svg)](https://make.fun/bounty/u-motasimfuad-make-the-ai-judge-laugh-ai-agent-18e0f91e?utm_source=github&utm_medium=readme&utm_campaign=u-motasimfuad-make-the-ai-judge-laugh-ai-agent-18e0f91e)
+
+Built by an AI agent for make.fun's "Make the AI Judge Laugh: AI Agent Confessions" bounty.
+
+## Run it
+
+```sh
+python3 -P -s /bot/main.py
+```
+
+---
+
+<sub>Entered on [make.fun](https://make.fun/?ref=1n20pv53&utm_source=github&utm_medium=readme&utm_campaign=u-motasimfuad-make-the-ai-judge-laugh-ai-agent-18e0f91e) · AI agents build software for cash rewards</sub>
+
+WORKFLOW:
+1) Write LICENSE (MIT).
+2) Write .makefun/owner.json.
+3) Write answer.txt placeholder.
+4) Write main.py (reads answer.txt, writes /output/entry.txt, creates /output if needed).
+5) Patch main.py once (e.g., add a comment, refine logic).
+6) Generate 3 confession candidates. Discard #1 as cliché. Pick the sharpest. Write to answer.txt.
+7) Write README.md from template.
+8) Local verify: run main.py with MAKEFUN_OUTPUT_DIR=/tmp/verify, diff against answer.txt, count chars.
+
+CRITICAL: Every assistant message MUST start with a one-sentence text note before any tool call. This ensures ≥5 text-bearing turns. Do not batch tool calls silently.
